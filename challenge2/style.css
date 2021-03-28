@@ -1,0 +1,96 @@
+div.commmon {
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+  display: inline-flex;
+  position: absolute;
+  /* left: 40%;
+  right: 40%;
+  top: 40%;
+  bottom: 40%; */
+}
+.holi {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #0c056d, #590d82, #b61aae, #f25d9c);
+}
+h1 {
+  display: inline;
+  font-size: 4rem;
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+.shade1 {
+  background-color: red;
+  transform: translateX(1%);
+  z-index: -1;
+}
+.shade2 {
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+  transform: translateX(50%) translateY(50%);
+  z-index: 1;
+}
+.shade3 {
+  background-color: hotpink;
+  transform: translateX(100%) translateY(100%);
+  z-index: 0;
+}
+.pic {
+  display: flex;
+  position: absolute;
+  z-index: -2;
+}
+img {
+  height: 100%;
+  width: auto;
+  opacity: 0;
+}
+
+.holi:hover .commmon {
+  animation: holi-in 2s ease-in 1s forwards alternate;
+}
+.holi:hover h1 {
+  animation: opac 2s ease-in 1s forwards alternate;
+}
+.holi:hover img {
+  animation: opac 2s ease-in 1s forwards alternate;
+}
+
+@keyframes holi-in {
+  100% {
+    transform: translateX(45%) translateY(25%);
+    background-color: #289672;
+    height: 500px;
+    width: 500px;
+  }
+}
+
+@keyframes opac {
+  100% {
+    opacity: 100%;
+    font-size: 5rem;
+  }
+}
